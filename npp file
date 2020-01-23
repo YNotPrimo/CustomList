@@ -1,0 +1,21 @@
+Custom List with extra stuff
+
+Append -> Value: Adds to the end of the list. Returns the list.
+Remove -> Index: Removes the value on this index. Returns the value removed.
+Get -> Index: Returns the value on this index.
+Extend -> Iterable: Adds the iterables to the list. Returns the new list.
+Insert -> Index, Value: Adds the value on the specific index. Returns the value.
+Pop -> None: Removes the last value and returns it.
+Clear -> None: Removes all the values.
+Index -> Value: Returns the index of this value
+Count -> None: Returns the length of the list
+Reverse -> None: Returns the list but backwards
+Copy -> None: Returns the list, which can be modified without changing the original one.
+
+AddFirst -> Value: adds to the beginning of the list (kinda like insert but without the index)
+Dictionize -> even: key, odd: value (if no odd, null), returns dict
+Move -> move x amount from back to front (or backwards)
+Sum -> check if list is made of numbers and returns the sum
+Overbound -> Returns the index of the biggest value (if string, length of string)
+Underbound -> Same thing like overbound but for the smallest value (again, same this for string)
+forEach -> self explanatory
