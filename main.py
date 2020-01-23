@@ -67,24 +67,25 @@ class CustomList:
         return [x for x in self.seq]
 
 
-a = CustomList(1, 2, 3, 4)
-print(a)  # [1, 2, 3, 4]
-print(a.append(5))  # [1, 2, 3, 4, 5]
+def main():
+    a = CustomList(1, 2, 3, 4)
+    print(a)  # [1, 2, 3, 4]
+    print(a.append(5))  # [1, 2, 3, 4, 5]
 
-print(a.remove(1))  # 2
-print(a)  # [1, 3, 4, 5]
+    print(a.remove(1))  # 2
+    print(a)  # [1, 3, 4, 5]
 
-print(a.get(2))  # 4
-print(a.extend(6, 7, 8))  # [1, 3, 4, 5, 6, 7, 8]
-print(a.insert(2, 10))  # [1, 3, 10, 4, 5, 6, 7, 8]
+    print(a.get(2))  # 4
+    print(a.extend(6, 7, 8))  # [1, 3, 4, 5, 6, 7, 8]
+    print(a.insert(2, 10))  # [1, 3, 10, 4, 5, 6, 7, 8]
 
-print(a.pop())  # 8
-print(a)  # [1, 3, 10, 4, 5, 6, 7]
+    print(a.pop())  # 8
+    print(a)  # [1, 3, 10, 4, 5, 6, 7]
 
-print(a.index(6))  # 5
-print(a.count(1))  # 1
+    print(a.index(6))  # 5
+    print(a.count(1))  # 1
 
-print(a.reverse())  # [7, 6, 5, 4, 10, 3, 1]
-print(a.copy())  # [1, 3, 10, 4, 5, 6, 7]
+    print(a.reverse())  # [7, 6, 5, 4, 10, 3, 1]
+    print(a.copy())  # [1, 3, 10, 4, 5, 6, 7]
 
-print(a.clear())  # []
+    print(a.clear())  # []
