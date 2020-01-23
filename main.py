@@ -66,6 +66,37 @@ class CustomList:
     def copy(self):
         return [x for x in self.seq]
 
+    def add_first(self, value):
+        self.seq = [value] + self.seq
+        return self.seq
+
+    def dictionize(self):
+        dicten = {}
+        for i in range(0, len(self.seq) - 1):
+            if i % 2 == 0:
+                if self.seq[i] not in dicten:
+                    if i + 1 < len(self.seq):
+                        dicten[self.seq[i]] = self.seq[i + 1]
+                    else:
+                        dicten[self.seq[i]] = ""
+
+        return dicten
+
+    def move(self, amount):
+        pass
+
+    def sum(self):
+        pass
+
+    def overbound(self):
+        pass
+
+    def underbound(self):
+        pass
+
+    def forEach(self):
+        pass
+
 
 def main():
     a = CustomList(1, 2, 3, 4)
@@ -88,4 +119,11 @@ def main():
     print(a.reverse())  # [7, 6, 5, 4, 10, 3, 1]
     print(a.copy())  # [1, 3, 10, 4, 5, 6, 7]
 
+    print(a.add_first(6))  # [6, 1, 3, 10, 4, 5, 6, 7]
+
+    print(a.dictionize())
+
     print(a.clear())  # []
+
+
+main()
