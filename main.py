@@ -83,19 +83,41 @@ class CustomList:
         return dicten
 
     def move(self, amount):
-        pass
+        moved = []
+        for i in range(0, amount):
+            moved.append(self.seq[0])
+            del self.seq[0]
+        self.seq.extend(moved)
+        return self.seq
 
     def sum(self):
-        pass
+        sum = 0
+        for x in self.seq:
+            if isinstance(x, int) or isinstance(x, float):
+                sum += x
+            else:
+                pass  # TODO ERROR
+        return sum
 
     def overbound(self):
-        pass
+        biggest_value = self.seq[0]
+        for i in range(0, len(self.seq)):
+            checked_value = self.seq[i]
+            if not isinstance(checked_value, int) and not isinstance(checked_value, float):
+                checked_value = len(checked_value)
+            if biggest_value <= checked_value:
+                biggest_value = checked_value
+        return biggest_value
 
     def underbound(self):
-        pass
-
-    def forEach(self):
-        pass
+        smallest_value = self.seq[0]
+        for i in range(0, len(self.seq)):
+            checked_value = self.seq[i]
+            if not isinstance(checked_value, int) and not isinstance(checked_value, float):
+                checked_value = len(checked_value)
+            if smallest_value > checked_value:
+                smallest_value = checked_value
+        return smallest_value
 
 
 def main():
@@ -120,8 +142,12 @@ def main():
     print(a.copy())  # [1, 3, 10, 4, 5, 6, 7]
 
     print(a.add_first(6))  # [6, 1, 3, 10, 4, 5, 6, 7]
+    print(a.dictionize())  # {6: 1, 3: 10, 4: 5}
+    print(a.move(4))  # [4, 5, 6, 7, 6, 1, 3, 10]
+    print(a.sum())  # 42
 
-    print(a.dictionize())
+    print(a.overbound())  # 10
+    print(a.underbound())  # 1
 
     print(a.clear())  # []
 

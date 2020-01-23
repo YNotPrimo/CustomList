@@ -18,4 +18,3 @@ Move -> move x amount from back to front (or backwards)
 Sum -> check if list is made of numbers and returns the sum
 Overbound -> Returns the index of the biggest value (if string, length of string)
 Underbound -> Same thing like overbound but for the smallest value (again, same this for string)
-forEach -> self explanatory
