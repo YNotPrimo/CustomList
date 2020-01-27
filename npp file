@@ -8,10 +8,11 @@ Insert -> Index, Value: Adds the value on the specific index. Returns the value.
 Pop -> None: Removes the last value and returns it.
 Clear -> None: Removes all the values.
 Index -> Value: Returns the index of this value
-Count -> None: Returns the length of the list
+Count -> None: Returns the amount of times a value is present in the list
 Reverse -> None: Returns the list but backwards
 Copy -> None: Returns the list, which can be modified without changing the original one.
 
+Size -> None: returns the length of the list
 AddFirst -> Value: adds to the beginning of the list (kinda like insert but without the index)
 Dictionize -> even: key, odd: value (if no odd, null), returns dict
 Move -> move x amount from back to front (or backwards)
