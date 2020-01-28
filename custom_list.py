@@ -7,11 +7,8 @@ class CustomList:
         self.seq = [x for x in args]
         self.length = len(args)
 
-    def __str__(self):
-        return str(self.seq)
-
     def __repr__(self):
-        return self.seq
+        return ', '.join([str(x) for x in self.seq])
 
     def __getitem__(self, item):
         return self.seq[item]

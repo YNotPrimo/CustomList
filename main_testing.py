@@ -7,7 +7,7 @@ class MyTestCase(unittest.TestCase):
         self.lst = CustomList(1, 2, 3, 4)
 
     def test_creating_works_correctly(self):
-        self.assertEqual(self.lst, [1, 2, 3, 4])
+        self.assertEqual(str(self.lst), "1, 2, 3, 4")
 
     def test_append_should_work(self):
         self.lst.append(5)
@@ -58,7 +58,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(self.lst.reverse(), [4, 3, 2, 1])
 
     def test_copy_should_work(self):
-        self.assertFalse(self.lst, self.lst.copy())  # Fix repr and str
+        self.assertEqual(self.lst.copy(), [1, 2, 3, 4])
 
     def test_size_should_work(self):
         self.assertEqual(self.lst.size(), 4)
