@@ -1,4 +1,4 @@
-import еrror_messages
+from еrror_messages import *
 
 
 class CustomList:
@@ -8,10 +8,13 @@ class CustomList:
         self.length = len(args)
 
     def __str__(self):
-        return repr(self.seq)
+        return str(self.seq)
 
     def __repr__(self):
         return self.seq
+
+    def __getitem__(self, item):
+        return self.seq[item]
 
     def append(self, value):
         new_list = self.seq + [value]
@@ -25,14 +28,12 @@ class CustomList:
             del self.seq[index]
             self.length -= 1
             return value
-        else:
-            raise IndexError(еrror_messages.remove_error())
+        raise IndexError(RemoveError)
 
     def get(self, index):
         if len(self.seq) > index:
             return self.seq[index]
-        else:
-            raise IndexError(еrror_messages.get_error())
+        raise IndexError(GetError)
 
     def extend(self, *args):
         new_list = self.seq + [x for x in args]
@@ -45,14 +46,15 @@ class CustomList:
             self.seq = self.seq[:index] + [value] + self.seq[index:]
             self.length += 1
             return self.seq
-        else:
-            raise IndexError(еrror_messages.insert_error())
+        raise IndexError(InsertError)
 
     def pop(self):
-        value = self.seq[len(self.seq) - 1]
-        del self.seq[len(self.seq) - 1]
-        self.length -= 1
-        return value
+        if len(self.seq) > 0:
+            value = self.seq[len(self.seq) - 1]
+            del self.seq[len(self.seq) - 1]
+            self.length -= 1
+            return value
+        raise IndexError(RemoveError)
 
     def clear(self):
         del self.seq[:]
@@ -63,6 +65,7 @@ class CustomList:
         for i in range(len(self.seq)):
             if self.seq[i] == value:
                 return i
+        return 1  # TODO ERROR
 
     def count(self, value):
         count = 0

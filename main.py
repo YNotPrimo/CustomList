@@ -30,4 +30,3 @@ print(a.underbound())  # 1
 
 print(a.clear())  # []
 
-print(list.__str__([]))

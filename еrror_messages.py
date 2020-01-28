@@ -1,11 +1,13 @@
-def remove_error():
-    return "No, you can't remove that. Index is out of the list."
+class RemoveError(Exception):
+    """No, you can't remove that. Index is out of the list."""
+    pass
 
 
-def get_error():
-    return "No, you can't get that. Index is out of the list."
+class GetError(Exception):
+    """No, you can't get that. Index is out of the list."""
+    pass
 
 
-def insert_error():
-    return "No, you can't do that. Index is out of the list."
-
+class InsertError(Exception):
+    """No, you can't do that. Index is out of the list."""
+    pass
